@@ -42,7 +42,7 @@ YaMDB отправляет письмо с кодом подтверждения
 2. Сборка и доставка докер-образа для контейнера web на Docker Hub
 3. Автоматический деплой проекта на боевой сервер
 4. Отправка уведомления в Telegram о том, что процесс деплоя успешно завершился
-https://github.com/AtabekovaEkaterina/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+![image](https://github.com/AtabekovaEkaterina/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 # Технологии
 ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) Python 3.7<br/>
