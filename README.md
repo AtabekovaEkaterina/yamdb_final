@@ -37,12 +37,12 @@ YaMDB отправляет письмо с кодом подтверждения
 **Суперюзер Django** — должен всегда обладать правами администратора, пользователя с правами admin. Даже если изменить пользовательскую роль суперюзера — это не лишит его прав администратора. Суперюзер — всегда администратор, но администратор — не обязательно суперюзер.
 
 # Workflow для проекта
+![image](https://github.com/AtabekovaEkaterina/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)<br/>
 Для данного проекта настроен workflow, содержащий 4 задачи (job):
 1. Проверка кода на соответствие стандарту PEP8 (с помощью пакета flake8) и запуск pytest
 2. Сборка и доставка докер-образа для контейнера web на Docker Hub
 3. Автоматический деплой проекта на боевой сервер
 4. Отправка уведомления в Telegram о том, что процесс деплоя успешно завершился
-![image](https://github.com/AtabekovaEkaterina/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 # Технологии
 ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) Python 3.7<br/>
