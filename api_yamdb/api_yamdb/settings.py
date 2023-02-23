@@ -12,7 +12,7 @@ SECRET_KEY = "Katyakaterina"
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["51.250.88.159"]
+ALLOWED_HOSTS = ["158.160.42.128"]
 
 INSTALLED_APPS = [
     "users.apps.UsersConfig",
