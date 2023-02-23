@@ -36,24 +36,16 @@ YaMDB отправляет письмо с кодом подтверждения
 
 **Суперюзер Django** — должен всегда обладать правами администратора, пользователя с правами admin. Даже если изменить пользовательскую роль суперюзера — это не лишит его прав администратора. Суперюзер — всегда администратор, но администратор — не обязательно суперюзер.
 
-# Workflow для проекта
-![image](https://github.com/AtabekovaEkaterina/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)<br/>
-Для данного проекта настроен workflow, содержащий 4 задачи (job):
-1. Проверка кода на соответствие стандарту PEP8 (с помощью пакета flake8) и запуск pytest
-2. Сборка и доставка докер-образа для контейнера web на Docker Hub
-3. Автоматический деплой проекта на боевой сервер
-4. Отправка уведомления в Telegram о том, что процесс деплоя успешно завершился
-
 # Технологии
 ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) Python 3.7<br/>
 ![image](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green) Django 2.2.16
 
 # Инструкция по запуску
-1. Склонируйте репозиторий 
+1. Клонируйте репозиторий 
 ```
 git@github.com:AtabekovaEkaterina/infra_sp2.git
 ```
-2. В дирктории проекта infa/ создайте файл .env, в котором нужно указать переменные окружения. Для этого скопируйте и вставьте следующий код в созданный файл:
+2. В дирктории проекта infa/ создайте файл .env, укажите в файле переменные окружения:
 ```
 DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
 DB_NAME=postgres # имя базы данных
@@ -82,16 +74,15 @@ docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
 7. Теперь приложение доступно по адресу http://localhost
-8. Для наполнения БД из фикстура, из директории проекта infa/ выполните команды:
-- скопирует файл с БД fixtures.json в контейнер
+8. Для наполнения БД из фикстура, выполните следующие команды из директории проекта infa/:
+- скопирует файл fixtures.json в контейнер
 ```
 docker cp fixtures.json <web container id>:app/
 ``` 
-- загрузит данные БД из скопированного контейнер файла
+- загрузит данные для БД из fixtures.json
 ```
 docker-compose exec web python manage.py loaddata fixtures.json
 ```
-
 # Примеры возможных запросов
 **GET получить информацию о произведении по id**<br>
 `http://localhost/api/v1/titles/{titles_id}/`
@@ -154,6 +145,14 @@ docker-compose exec web python manage.py loaddata fixtures.json
   "detail": "Страница не найдена."<br>
 }
 </details>
+
+# Workflow для проекта
+![image](https://github.com/AtabekovaEkaterina/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)<br/>
+Для данного проекта настроен workflow, содержащий 4 задачи (job):
+1. Проверка кода на соответствие стандарту PEP8 (с помощью пакета flake8) и запуск pytest
+2. Сборка и доставка докер-образа для контейнера web на Docker Hub
+3. Автоматический деплой проекта на боевой сервер
+4. Отправка уведомления в Telegram о том, что процесс деплоя успешно завершился
 
 # Авторы
 Екатерина Атабекова<br>
