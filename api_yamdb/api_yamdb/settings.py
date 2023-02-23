@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "Katyakaterina"
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["51.250.88.159"]
 
