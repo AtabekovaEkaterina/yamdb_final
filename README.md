@@ -79,7 +79,7 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 docker cp fixtures.json <web container id>:app/
 ``` 
-- загрузит данные для БД из fixtures.json
+- загрузитe данные для БД из fixtures.json
 ```
 docker-compose exec web python manage.py loaddata fixtures.json
 ```
